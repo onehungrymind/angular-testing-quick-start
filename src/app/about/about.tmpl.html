@@ -1,0 +1,10 @@
+<h1>{{about.title}}</h1>
+<p>{{about.body}}</p>
+<hr />
+<div>
+    <h2 class="text-error">About: {{about.message}}</h2>
+    <form class="form-inline">
+        <input type="text" class="form-control" ng-model="about.message" placeholder="Message" />
+        <button type="submit" class="btn btn-default" ng-click="about.updateMessage(about.message)">Update Message</button>
+    </form>
+</div>

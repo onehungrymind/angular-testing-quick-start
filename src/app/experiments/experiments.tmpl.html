@@ -1,0 +1,12 @@
+<h1>{{experiments.title}}</h1>
+<p>{{experiments.body}}</p>
+<hr />
+<experiment ng-repeat="experiment in experiments.experiments"></experiment>
+<hr />
+<div>
+    <h2 class="text-error">Experiments: {{experiments.message}}</h2>
+    <form class="form-inline">
+        <input type="text" class="form-control" ng-model="experiments.message" placeholder="Message" />
+        <button type="submit" class="btn btn-default" ng-click="experiments.updateMessage(experiments.message)">Update Message</button>
+    </form>
+</div>

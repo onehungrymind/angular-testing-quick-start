@@ -1,0 +1,20 @@
+{
+  "name": "karma-quick-start",
+  "version": "1.0.0",
+  "description": "Building an AngularJS Website Using Routes ======================",
+  "main": "karma.conf.js",
+  "dependencies": {
+    "karma-cli": "^0.0.4",
+    "karma": "^0.12.24"
+  },
+  "devDependencies": {
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-jasmine": "^0.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

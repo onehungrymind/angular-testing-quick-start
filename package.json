@@ -1,7 +1,7 @@
 {
-  "name": "karma-quick-start",
+  "name": "AngularJS Testing Quick Start",
   "version": "1.0.0",
-  "description": "Building an AngularJS Website Using Routes ======================",
+  "description": "Companion code for One Hungry Mind's AngularJS Testing Quick Start",
   "main": "karma.conf.js",
   "dependencies": {
     "karma-cli": "^0.0.4",
@@ -12,9 +12,6 @@
     "karma-chrome-launcher": "^0.1.5",
     "karma-jasmine": "^0.2.3"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "Lukas Ruebbelke",
   "license": "ISC"
 }

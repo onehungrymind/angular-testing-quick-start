@@ -5,11 +5,19 @@ describe('Unit: Home', function () {
     beforeEach(module('myApp.models.messages'));
     beforeEach(module('ui.router'));
 
+    beforeEach(module(function ($provide) {
+        $provide.value('Messages', {
+            message: 'Mock Message!',
+            getMessage: function () { return this.message; },
+            setMessage: function (m) { this.message = m; }
+        });
+    }));
+
     beforeEach(inject(function ($controller, _Messages_) {
         messages = _Messages_;
 
         spyOn(messages, 'setMessage');
-        spyOn(messages, 'getMessage').and.returnValue('Hello!');
+        spyOn(messages, 'getMessage').and.callThrough();
 
         ctrl = $controller('HomeCtrl', {
             Messages: messages
@@ -28,7 +36,7 @@ describe('Unit: Home', function () {
         it('should call Messages.getMessage', function () {
             expect(messages.getMessage).toHaveBeenCalled();
 
-            expect(ctrl.message).toEqual('Hello!');
+            expect(ctrl.message).toEqual('Mock Message!');
         });
 
         it('should call updateMessage on message', function () {

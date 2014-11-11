@@ -16,6 +16,29 @@ describe('Unit: About', function () {
         });
     }));
 
+    describe('About Route', function () {
+        var $state,
+            $rootScope,
+            state = 'about';
+
+        beforeEach(inject(function (_$state_, $templateCache, _$rootScope_) {
+            $state = _$state_;
+            $rootScope = _$rootScope_;
+
+            $templateCache.put('app/about/about.tmpl.html', '');
+        }));
+
+        it('should respond to URL', function() {
+            expect($state.href(state)).toEqual('/about');
+        });
+
+        it('should activate the state', function() {
+            $state.go(state);
+            $rootScope.$digest();
+            expect($state.current.name).toBe(state);
+        });
+    });
+
     describe('AboutCtrl', function () {
         it('should have title defined', function () {
             expect(ctrl.title).toBeDefined();

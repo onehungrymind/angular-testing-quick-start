@@ -1,52 +1,26 @@
-describe('Karma Quick Start', function () {
-    /*
-    var ctrl, scope, superService, element;
-
+describe('Unit: App', function () {
     beforeEach(module('myApp'));
-    beforeEach(inject(function ($rootScope, $compile, $controller, _SuperService_) {
-        scope = $rootScope.$new();
-        superService = _SuperService_;
-        ctrl = $controller('MainCtrl', {
-            $scope: scope,
-            SuperService: _SuperService_
-        });
+    beforeEach(module('myApp.about'));
+    beforeEach(module('myApp.experiments'));
+    beforeEach(module('myApp.home'));
+    beforeEach(module('myApp.models.messages'));
+    beforeEach(module('ui.router'));
 
-        element = angular.element('<div my-directive></div>');
-        $compile(element)($rootScope)
-    }));
-    
-    describe('myDirective', function() {
-        it('should add a class of plain', function() {
-            expect(element.hasClass('plain')).toBe(true);
-        });
+    describe('App Abstract Route', function () {
+        var $state,
+            $rootScope,
+            state = 'app';
 
-        it('should should cube', function() {
-            expect(element.scope().cube(3)).toBe(27);
-        });
-    })
+        beforeEach(inject(function (_$state_, $templateCache, _$rootScope_) {
+            $state = _$state_;
+            $rootScope = _$rootScope_;
+            $templateCache.put('app/home/home.tmpl.html', '');
+        }));
 
-    describe('MainCtrl', function () {
-        it('should add', function () {
-            expect(scope.add(2, 2)).toEqual(4);
-        });
-
-        it('should subtract', function () {
-            expect(scope.subtract(4, 2)).toEqual(2);
-        });
-
-        it('should multiply', function () {
-           expect(scope.multiply(4, 3)).toEqual(12);
+        it('verify state configuration', function() {
+            var config = $state.get(state);
+            expect(config.abstract).toBeTruthy();
+            expect(config.url).toBeUndefined();
         });
     });
-
-    describe('SuperService', function () {
-        it('should add', function () {
-            expect(superService.add(2, 2)).toEqual(4);
-        });
-
-        it('should subtract', function () {
-            expect(superService.subtract(4, 2)).toEqual(2);
-        });
-    });
-    */
-})
+});

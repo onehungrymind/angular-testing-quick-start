@@ -1,5 +1,5 @@
 {
-  "name": "AngularJS Testing Quick Start",
+  "name": "angularjs-testing-quick-start",
   "version": "1.0.0",
   "description": "Companion code for One Hungry Mind's AngularJS Testing Quick Start",
   "main": "karma.conf.js",

@@ -9,8 +9,12 @@ describe('Unit: Home', function () {
     beforeEach(module(function ($provide) {
         $provide.value('Messages', {
             message: 'Mock Message!',
-            getMessage: function () { return this.message; },
-            setMessage: function (m) { this.message = m;  }
+            getMessage: function () {
+                return this.message;
+            },
+            setMessage: function (m) {
+                this.message = m;
+            }
         });
     }));
 
@@ -31,11 +35,11 @@ describe('Unit: Home', function () {
             $rootScope = _$rootScope_;
         }));
 
-        it('should respond to URL', function() {
+        it('should respond to URL', function () {
             expect($state.href(state)).toEqual('/home');
         });
 
-        it('should activate the state', function() {
+        it('should activate the state', function () {
             $state.go(state);
             $rootScope.$digest();
             expect($state.current.name).toBe(state);
@@ -44,50 +48,50 @@ describe('Unit: Home', function () {
 
     describe('home page', function () {
         var element, render, ctrl, scope;
-        beforeEach(inject( function($injector) {
+        beforeEach(inject(function ($injector) {
 
-          var routeDetails = compileRouteTemplateWithController($injector, 'home');
-          ctrl = routeDetails.controller;
-          scope = routeDetails.scope;
+            var routeDetails = compileRouteTemplateWithController($injector, 'home');
+            ctrl = routeDetails.controller;
+            scope = routeDetails.scope;
 
-          render = function() {
-            element = routeDetails.render();
-          };
+            render = function () {
+                element = routeDetails.render();
+            };
         }));
 
         it('should render the page title', function () {
-          scope.home.title = 'Hello';
-          render();
-          expect(element.find('h1').text()).toBe('Hello');
+            scope.home.title = 'Hello';
+            render();
+            expect(element.find('h1').text()).toBe('Hello');
         });
 
         it('should have body defined', function () {
-          scope.home.body = 'body...';
-          render();
-          expect(element.find('p').text()).toBe('body...');
+            scope.home.body = 'body...';
+            render();
+            expect(element.find('p').text()).toBe('body...');
         });
 
         it('should call Messages.getMessage', function () {
-          render();
-          expect(Messages.getMessage).toHaveBeenCalled();
+            render();
+            expect(Messages.getMessage).toHaveBeenCalled();
 
-          ctrl.updateMessage('yo!');
-          expect(Messages.setMessage).toHaveBeenCalled();
+            ctrl.updateMessage('yo!');
+            expect(Messages.setMessage).toHaveBeenCalled();
 
-          expect(scope.home.message).toEqual('yo!');
+            expect(scope.home.message).toEqual('yo!');
         });
 
         it('should call Messages.setMessage when submit is clicked', function () {
-          render();
-          element.find('input').val('Lukas');
-          element.find('input').triggerHandler('input');
-          scope.$digest();
+            render();
+            element.find('input').val('Lukas');
+            element.find('input').triggerHandler('input');
+            scope.$digest();
 
-          element.find('button').triggerHandler('click');
-          scope.$digest();
+            element.find('button').triggerHandler('click');
+            scope.$digest();
 
-          expect(Messages.getMessage).toHaveBeenCalled();
-          expect(scope.home.message).toEqual('Lukas');
+            expect(Messages.getMessage).toHaveBeenCalled();
+            expect(scope.home.message).toEqual('Lukas');
         });
 
         it('should call updateMessage on message', function () {

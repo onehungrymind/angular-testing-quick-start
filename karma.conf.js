@@ -18,7 +18,7 @@ module.exports = function (config) {
             'src/vendor/angular.min.js',
             'src/vendor/angular-mocks.js',
             'src/vendor/angular-ui-router.min.js',
-            'src/unit-test-helpers.js',
+            'src/assets/js/unit-test-helpers.js',
             'src/app/**/*.html',
             'src/app/**/*.spec.js',
             'src/app/**/*.js'

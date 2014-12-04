@@ -18,10 +18,21 @@ module.exports = function (config) {
             'src/vendor/angular.min.js',
             'src/vendor/angular-mocks.js',
             'src/vendor/angular-ui-router.min.js',
+            'src/unit-test-helpers.js',
+            'src/app/**/*.html',
             'src/app/**/*.spec.js',
             'src/app/**/*.js'
         ],
 
+        ngHtml2JsPreprocessor: {
+          //stripPrefix: 'public/',
+          //stripSufix: '.ext',
+          stripPrefix: 'src/',
+
+          // setting this option will create only a single module that contains templates
+          // from all the files, so you can load them all with module('foo')
+          moduleName: 'myAppTemplates'
+        },
 
         // list of files to exclude
         exclude: [],
@@ -29,7 +40,9 @@ module.exports = function (config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+          'src/app/**/*.html': ['ng-html2js']
+        },
 
 
         // test results reporter to use

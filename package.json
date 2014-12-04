@@ -4,8 +4,9 @@
   "description": "Companion code for One Hungry Mind's AngularJS Testing Quick Start",
   "main": "karma.conf.js",
   "dependencies": {
+    "karma": "^0.12.24",
     "karma-cli": "^0.0.4",
-    "karma": "^0.12.24"
+    "karma-ng-html2js-preprocessor": "^0.1.2"
   },
   "devDependencies": {
     "karma": "^0.12.24",

@@ -20,6 +20,7 @@ angular.module('myApp.home', [
 
         home.updateMessage = function (m) {
             Messages.setMessage(m);
+            home.message = m;
         };
     })
 ;

@@ -19,8 +19,8 @@ describe('Unit: App', function () {
 
         it('verify state configuration', function () {
             var config = $state.get(state);
-            expect(config.abstract).toBeTruthy();
-            expect(config.url).toBeUndefined();
+            expect(config.abstract).to.be.ok;
+            expect(config.url).to.be.undefined;
         });
     });
 });

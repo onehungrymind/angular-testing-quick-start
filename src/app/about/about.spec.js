@@ -8,8 +8,9 @@ describe('Unit: About', function () {
     beforeEach(inject(function ($controller, _Messages_) {
         messages = _Messages_;
 
-        spyOn(messages, 'setMessage');
-        spyOn(messages, 'getMessage').and.returnValue('Hello!');
+        sinon.spy(messages, 'setMessage');
+        // TODO: Is this right?
+        sinon.stub(messages, 'getMessage').returns('Hello!');
 
         ctrl = $controller('AboutCtrl', {
             Messages: messages
@@ -29,29 +30,29 @@ describe('Unit: About', function () {
         }));
 
         it('should respond to URL', function() {
-            expect($state.href(state)).toEqual('/about');
+            expect($state.href(state)).to.equal('/about');
         });
 
         it('should activate the state', function() {
             $state.go(state);
             $rootScope.$digest();
-            expect($state.current.name).toBe(state);
+            expect($state.current.name).to.equal(state);
         });
     });
 
     describe('AboutCtrl', function () {
         it('should have title defined', function () {
-            expect(ctrl.title).toBeDefined();
+            should.exist(ctrl.title);
         });
 
         it('should have body defined', function () {
-            expect(ctrl.body).toBeDefined();
+            should.exist(ctrl.body);
         });
 
         it('should call Messages.getMessage', function () {
-            expect(messages.getMessage).toHaveBeenCalled();
+            expect(messages.getMessage).to.have.been.called;
 
-            expect(ctrl.message).toEqual('Hello!');
+            expect(ctrl.message).to.equal('Hello!');
         });
 
         it('should call updateMessage on message', function () {
@@ -59,7 +60,7 @@ describe('Unit: About', function () {
 
             ctrl.updateMessage(message);
 
-            expect(messages.setMessage).toHaveBeenCalledWith(message);
+            expect(messages.setMessage).to.have.been.calledWith(message);
         });
     });
 });

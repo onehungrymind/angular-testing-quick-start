@@ -12,6 +12,6 @@ describe('Unit: Message Model', function () {
 
         messages.setMessage(message)
 
-        expect(messages.getMessage()).toEqual(message);
+        expect(messages.getMessage()).to.equal(message);
     });
 });

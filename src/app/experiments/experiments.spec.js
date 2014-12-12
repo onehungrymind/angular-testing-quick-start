@@ -17,13 +17,13 @@ describe('Unit: Experiments', function () {
         }));
 
         it('should respond to URL', function() {
-            expect($state.href(state)).toEqual('/experiments');
+            expect($state.href(state)).to.equal('/experiments');
         });
 
         it('should activate the state', function() {
             $state.go(state);
             $rootScope.$digest();
-            expect($state.current.name).toBe(state);
+            expect($state.current.name).to.equal(state);
         });
     });
 
@@ -32,16 +32,15 @@ describe('Unit: Experiments', function () {
             messages = _Messages_;
             experiments = _Experiments_;
 
-            spyOn(messages, 'setMessage');
-            spyOn(messages, 'getMessage').and.returnValue('Hello!');
+            sinon.spy(messages, 'setMessage');
+            sinon.stub(messages, 'getMessage').returns('Hello!');
 
-            spyOn(experiments, 'getExperiments').and.callFake(
-                function () {
-                    var deferred = $q.defer();
-                    deferred.resolve({data: []});
-                    return deferred.promise;
-                }
-            );
+            // TODO: Did I do this right?
+            sinon.spy(experiments, 'getExperiments', function() {
+              var deferred = $q.defer();
+              deferred.resolve({data: []});
+              return deferred.promise;
+            });
 
             ctrl = $controller('ExperimentsCtrl', {
                 Messages: messages,
@@ -50,17 +49,17 @@ describe('Unit: Experiments', function () {
         }));
 
         it('should have title defined', function () {
-            expect(ctrl.title).toBeDefined();
+            expect(ctrl.title).to.exist;
         });
 
         it('should have body defined', function () {
-            expect(ctrl.body).toBeDefined();
+            expect(ctrl.body).to.exist;
         });
 
         it('should call Messages.getMessage', function () {
-            expect(messages.getMessage).toHaveBeenCalled();
+            expect(messages.getMessage).to.have.been.called;
 
-            expect(ctrl.message).toEqual('Hello!');
+            expect(ctrl.message).to.equal('Hello!');
         });
 
         it('should call updateMessage on message', function () {
@@ -68,7 +67,7 @@ describe('Unit: Experiments', function () {
 
             ctrl.updateMessage(message);
 
-            expect(messages.setMessage).toHaveBeenCalledWith(message);
+            expect(messages.setMessage).to.have.been.calledWith(message);
         });
     });
 
@@ -86,7 +85,8 @@ describe('Unit: Experiments', function () {
             $httpBackend.flush();
 
             promise.then(function (result) {
-                expect(result.data).toEqual(mockResponse);
+                // TODO: For some reason this breaks if I don't use deep.equal
+                expect(result.data).to.deep.equal(mockResponse);
             });
             $rootScope.$digest();
         }));
@@ -105,11 +105,11 @@ describe('Unit: Experiments', function () {
         it('should increment experiment completed count', function () {
             var localScope = element.scope();
 
-            expect(localScope.experiment.completed).toBe(0);
+            expect(localScope.experiment.completed).to.equal(0);
 
             localScope.doExperiment();
 
-            expect(localScope.experiment.completed).toBe(1);
+            expect(localScope.experiment.completed).to.equal(1);
         });
     })
 });

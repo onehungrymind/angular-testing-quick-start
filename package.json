@@ -9,7 +9,6 @@
     "karma-ng-html2js-preprocessor": "^0.1.2"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
     "karma": "^0.12.24",
     "karma-chrome-launcher": "^0.1.5",
     "karma-mocha": "^0.1.10",

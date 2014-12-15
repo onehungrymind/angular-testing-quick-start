@@ -22,11 +22,14 @@ describe('Unit: Home', function () {
         Messages = _Messages_;
 
         // TODO: Don't know what to do here...will just sinon.spy(object, 'method') suffice? If so, everything else in this Unit will work. Smoochie boochies :P
-          /*spyOn(Messages, 'setMessage').and.callThrough();
-          spyOn(Messages, 'getMessage').and.callThrough();*/
+        /*
+        spyOn(Messages, 'setMessage').and.callThrough();
+        spyOn(Messages, 'getMessage').and.callThrough();
+        */
 
-          /*sinon.spy(Messages, 'setMessage');
-          sinon.spy(Messages, 'getMessage');*/
+        sinon.spy(Messages, 'setMessage');
+        sinon.spy(Messages, 'getMessage');
+
     }));
 
     describe('Home Route', function () {
@@ -77,11 +80,10 @@ describe('Unit: Home', function () {
 
         it('should call Messages.getMessage', function () {
             render();
-            // TODO: Fail because spies have not been created
-//            expect(Messages.getMessage).to.have.been.called;
+            expect(Messages.getMessage).to.have.been.called;
 
             ctrl.updateMessage('yo!');
-//            expect(Messages.setMessage).to.have.been.called;
+            expect(Messages.setMessage).to.have.been.called;
 
             expect(scope.home.message).to.equal('yo!');
         });
@@ -95,8 +97,7 @@ describe('Unit: Home', function () {
             element.find('button').triggerHandler('click');
             scope.$digest();
 
-            // TODO: Again, this is not a spy so it breaks
-//            expect(Messages.getMessage).to.have.been.called;
+            expect(Messages.getMessage).to.have.been.called;
             expect(scope.home.message).to.equal('Lukas');
         });
 
@@ -105,8 +106,7 @@ describe('Unit: Home', function () {
 
             ctrl.updateMessage(message);
 
-            // TODO: Once again not a spy
-//            expect(Messages.setMessage).to.have.been.calledWith(message);
+            expect(Messages.setMessage).to.have.been.calledWith(message);
         });
     });
 });

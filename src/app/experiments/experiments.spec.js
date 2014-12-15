@@ -35,7 +35,6 @@ describe('Unit: Experiments', function () {
             sinon.spy(messages, 'setMessage');
             sinon.stub(messages, 'getMessage').returns('Hello!');
 
-            // TODO: Did I do this right?
             sinon.spy(experiments, 'getExperiments', function() {
               var deferred = $q.defer();
               deferred.resolve({data: []});
@@ -85,7 +84,6 @@ describe('Unit: Experiments', function () {
             $httpBackend.flush();
 
             promise.then(function (result) {
-                // TODO: For some reason this breaks if I don't use deep.equal
                 expect(result.data).to.deep.equal(mockResponse);
             });
             $rootScope.$digest();

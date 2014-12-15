@@ -9,7 +9,6 @@ describe('Unit: About', function () {
         messages = _Messages_;
 
         sinon.spy(messages, 'setMessage');
-        // TODO: Is this right?
         sinon.stub(messages, 'getMessage').returns('Hello!');
 
         ctrl = $controller('AboutCtrl', {

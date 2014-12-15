@@ -21,15 +21,8 @@ describe('Unit: Home', function () {
     beforeEach(inject(function ($controller, _Messages_) {
         Messages = _Messages_;
 
-        // TODO: Don't know what to do here...will just sinon.spy(object, 'method') suffice? If so, everything else in this Unit will work. Smoochie boochies :P
-        /*
-        spyOn(Messages, 'setMessage').and.callThrough();
-        spyOn(Messages, 'getMessage').and.callThrough();
-        */
-
         sinon.spy(Messages, 'setMessage');
         sinon.spy(Messages, 'getMessage');
-
     }));
 
     describe('Home Route', function () {

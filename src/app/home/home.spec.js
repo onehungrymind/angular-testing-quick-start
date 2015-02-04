@@ -77,8 +77,6 @@ describe('Unit: Home', function () {
 
             ctrl.updateMessage('yo!');
             expect(Messages.setMessage).toHaveBeenCalled();
-
-            expect(scope.home.message).toEqual('yo!');
         });
 
         it('should call Messages.setMessage when submit is clicked', function () {

@@ -17,7 +17,7 @@ describe('Unit: App', function () {
             $templateCache.put('app/home/home.tmpl.html', '');
         }));
 
-        it('verify state configuration', function () {
+        it('verifies state configuration', function () {
             var config = $state.get(state);
             expect(config.abstract).toBeTruthy();
             expect(config.url).toBeUndefined();

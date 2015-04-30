@@ -1,4 +1,4 @@
-function compileRouteTemplateWithController($injector, state) {
+function compileRouteTemplateWithController($injector, state, controllerName) {
     var $rootScope = $injector.get('$rootScope');
     var $templateCache = $injector.get('$templateCache');
     var $compile = $injector.get('$compile');
@@ -9,7 +9,7 @@ function compileRouteTemplateWithController($injector, state) {
     var stateDetails = $state.get(state);
     var html = $templateCache.get(stateDetails.templateUrl);
 
-    var ctrl = scope.home = $controller('HomeCtrl');
+    var ctrl = scope[state] = $controller(controllerName);
     $rootScope.$digest();
     var compileFn = $compile(angular.element('<div></div>').html(html));
 

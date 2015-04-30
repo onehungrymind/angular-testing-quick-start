@@ -50,7 +50,7 @@ describe('Unit: Home', function () {
         var element, render, ctrl, scope;
         beforeEach(inject(function ($injector) {
 
-            var routeDetails = compileRouteTemplateWithController($injector, 'home');
+            var routeDetails = compileRouteTemplateWithController($injector, 'home', 'HomeCtrl');
             ctrl = routeDetails.controller;
             scope = routeDetails.scope;
 

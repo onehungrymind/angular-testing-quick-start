@@ -1,8 +1,8 @@
 #AngularJS Testing Quick Start
 
-This the companion project for the AngularJS Testing Quick Start from One Hungry Mind.
+This the companion project for the AngularJS Testing Quick Start from [One Hungry Mind](http://onehungryminde.com).
 
-To read the guide go to [One Hungry Mind](http://onehungrymind.com/quickstart).
+To read the guide head on over to [the repo](https://github.com/simpulton/angularjs-testing-quick-start-text).
 
 
 Run the App

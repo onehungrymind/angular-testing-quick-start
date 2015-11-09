@@ -36,7 +36,7 @@ describe('Unit: Home', function () {
         }));
 
         it('should respond to URL', function () {
-            expect($state.href(state)).toEqual('/home');
+            expect($state.href(state)).toEqual('#/home');
         });
 
         it('should activate the state', function () {

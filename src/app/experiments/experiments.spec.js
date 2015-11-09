@@ -17,7 +17,7 @@ describe('Unit: Experiments', function () {
         }));
 
         it('should respond to URL', function() {
-            expect($state.href(state)).toEqual('/experiments');
+            expect($state.href(state)).toEqual('#/experiments');
         });
 
         it('should activate the state', function() {

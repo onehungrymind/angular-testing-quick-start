@@ -29,7 +29,7 @@ describe('Unit: About', function () {
         }));
 
         it('should respond to URL', function() {
-            expect($state.href(state)).toEqual('/about');
+            expect($state.href(state)).toEqual('#/about');
         });
 
         it('should activate the state', function() {

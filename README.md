@@ -2,7 +2,7 @@
 
 This the companion project for the Angular Testing Quick Start from [One Hungry Mind](http://onehungrymind.com).
 
-To read the guide head on over to [the repo](https://github.com/simpulton/angular-testing-quick-start-text).
+To read the guide head on over to [the repo](https://github.com/AngularClass/angular-testing-quick-start-guide).
 
 
 Run the App

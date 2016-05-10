@@ -23,5 +23,11 @@ Run the Tests
 
 To run the tests, make sure you have Node installed.
 
+Install and run the `karma-cli` package so you can test the app.
+
+```
+npm install -g karma-cli
+```
+
 Then run `npm install` and `karma start` to run the tests.
 

@@ -3,7 +3,6 @@ describe('Unit: About', function () {
 
     beforeEach(module('myApp.about'));
     beforeEach(module('myApp.models.messages'));
-    beforeEach(module('ui.router'));
 
     beforeEach(inject(function ($controller, _Messages_) {
         messages = _Messages_;
@@ -19,12 +18,10 @@ describe('Unit: About', function () {
     describe('About Route', function () {
         var $state,
             $rootScope,
-            state = 'about';
+                $routeProvider = '/about';
 
-        beforeEach(inject(function (_$state_, $templateCache, _$rootScope_) {
-            $state = _$state_;
+        beforeEach(inject(function ($templateCache, _$rootScope_) {
             $rootScope = _$rootScope_;
-
             $templateCache.put('app/about/about.tmpl.html', '');
         }));
 

@@ -2,10 +2,8 @@
 <html ng-app="myApp">
     <head>
         <title>AngularJS Website</title>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="assets/css/website.css" rel="stylesheet" />
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-        <script src="vendor/angular-ui-router.min.js"></script>
     </head>
 
     <body>
@@ -23,13 +21,17 @@
         <!-- //top -->
         <div class="shadow"></div>
         <div id="container">
-            <div ui-view></div>
+            <div ng-view></div>
         </div>
 
-        <script type="text/javascript" src="app/app.js"></script>
-        <script type="text/javascript" src="app/common/models/messages-model.js"></script>
-        <script type="text/javascript" src="app/about/about.js"></script>
-        <script type="text/javascript" src="app/experiments/experiments.js"></script>
-        <script type="text/javascript" src="app/home/home.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+        <script src="app.js"></script>
+        <script src="common/models/messages-model.js"></script>
+        <script src="about/about.js"></script>
+        <script src="experiments/experiments.js"></script>
+        <script src="home/home.js"></script>
     </body>
 </html>

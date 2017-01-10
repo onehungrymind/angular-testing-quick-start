@@ -1,12 +1,14 @@
-angular.module('myApp.models.messages', [
-
-])
-    .factory('Messages', function () {
+(function ()
+{
+    angular.module('myApp.models.messages', []).factory('Messages', function ()
+    {
         var message = 'Hello Message';
-        var getMessage = function () {
+        var getMessage = function ()
+        {
             return message;
         };
-        var setMessage = function (m) {
+        var setMessage = function (m)
+        {
             message = m;
         };
 
@@ -14,5 +16,5 @@ angular.module('myApp.models.messages', [
             getMessage: getMessage,
             setMessage: setMessage
         }
-    })
-;
+    });
+})();

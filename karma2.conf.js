@@ -1,7 +1,10 @@
 // Karma configuration
 // Generated on Sat Nov 08 2014 19:20:47 GMT-0700 (MST)
 
-module.exports = function (config) {
+module.exports = function (config)
+{
+    'use strict';
+
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -15,22 +18,22 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'src/vendor/angular.min.js',
-            'src/vendor/angular-mocks.js',
-            'src/vendor/angular-ui-router.min.js',
-            'src/assets/js/unit-test-helpers.js',
-            'src/app/**/*.html',
-            'src/app/**/*.spec.js',
-            'src/app/**/*.js'
+            'src/bower_components/angular/angular.js',
+            'src/bower_components/angular-mocks/angular-mocks.js',
+            'src/bower_components/angular-ui-router/release/angular-ui-router.js',
+            'test/unit-test-helpers.js',
+            'app/**/*.html',
+            'app/**/*.spec.js',
+            'app/**/*.js'
         ],
 
         ngHtml2JsPreprocessor: {
-          stripPrefix: 'src/',
-          //stripSufix: '.ext',
+            stripPrefix: 'src/',
+            //stripSufix: '.ext',
 
-          // setting this option will create only a single module that contains templates
-          // from all the files, so you can load them all with module('foo')
-          moduleName: 'myAppTemplates'
+            // setting this option will create only a single module that contains templates
+            // from all the files, so you can load them all with module('foo')
+            moduleName: 'myAppTemplates'
         },
 
         // list of files to exclude
@@ -40,15 +43,20 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-          'src/app/**/*.html': ['ng-html2js']
+            'src/app/**/*.html': ['ng-html2js'],
+            'src/**/*.js': 'coverage',
+            'app/!(bower_components)/**/*.js': 'coverage'
         },
 
+        coverageReporter: {
+            dir: 'target/',
+            type: 'html'
+        },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
-
+        reporters: ['spec', 'coverage', 'progress'],
 
         // web server port
         port: 9876,
@@ -69,11 +77,13 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
 
+        // Which plugins to enable
+        plugins: ['karma-phantomjs-launcher', 'karma-jasmine', 'karma-spec-reporter', 'karma-coverage', 'ng-html2js'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false
+        singleRun: true
     });
 };

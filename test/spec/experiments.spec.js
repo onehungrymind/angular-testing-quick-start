@@ -3,7 +3,7 @@ describe('Unit: Experiments', function () {
 
     beforeEach(module('myApp.experiments'));
     beforeEach(module('myApp.models.messages'));
-    beforeEach(module('ui.router'));
+    beforeEach(module('ngRoute'));
 
     describe('Experiments Route', function () {
         var $state,

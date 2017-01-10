@@ -4,7 +4,7 @@ describe('Unit: Home', function () {
     beforeEach(module('myAppTemplates'));
     beforeEach(module('myApp.home'));
     beforeEach(module('myApp.models.messages'));
-    beforeEach(module('ui.router'));
+    beforeEach(module('ngRoute'));
 
     beforeEach(module(function ($provide) {
         $provide.value('Messages', {

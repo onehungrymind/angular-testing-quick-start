@@ -1,4 +1,4 @@
-fdescribe('ContactCtrl', function ()
+describe('ContactCtrl', function ()
 {
     var contactsCtrl;
     var ContactServiceMock;

@@ -1,5 +1,7 @@
 (function ()
 {
+    'use strict';
+
     angular.module('app').controller('ContactController', function (ContactService)
     {
         var ctrl = this;

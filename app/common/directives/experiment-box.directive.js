@@ -1,5 +1,7 @@
 (function ()
 {
+    'use strict';
+
     angular.module('app').directive('experimentBox', function ()
     {
         var linker = function (scope, element, attrs, ctrl)

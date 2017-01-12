@@ -1,0 +1,34 @@
+<div>
+    <form class="form-inline">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" ng-model="contactCtrl.newContact.name"/>
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" ng-model="contactCtrl.newContact.email"/>
+        <label>Phone</label>
+        <input type="text" class="form-control" name="phone" ng-model="contactCtrl.newContact.phone"/>
+        <input type="hidden" ng-model="contactCtrl.newContact.id"/>
+        <button class="btn btn-success" ng-click="contactCtrl.saveContact()"> Save</button>
+    </form>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contact in contactCtrl.contacts">
+            <td>{{contact.name }}</td>
+            <td>{{contact.email }}</td>
+            <td>{{contact.phone }}</td>
+            <td>
+                <a ng-click="contactCtrl.editContact(contact.id)">edit</a> |
+                <a ng-click="contactCtrl.deleteContact(contact.id)">delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

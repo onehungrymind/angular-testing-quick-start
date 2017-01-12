@@ -1,18 +1,29 @@
 {
-  "name": "angularjs-testing-quick-start",
+  "name": "academy-angularjs-testing-quick-start",
   "version": "1.0.0",
-  "description": "Companion code for One Hungry Mind's AngularJS Testing Quick Start",
-  "main": "karma.conf.js",
-  "dependencies": {
-    "karma": "^0.12.24",
-    "karma-cli": "^0.0.4",
-    "karma-ng-html2js-preprocessor": "^0.1.2"
-  },
+  "description": "Fork from Lukas Ruebbelke'a angularjs-testing-quick-start",
   "devDependencies": {
-    "karma": "^0.12.24",
-    "karma-chrome-launcher": "^0.1.5",
-    "karma-jasmine": "^0.2.3"
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-jshint": "0.11.3",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-karma": "0.10.1",
+    "grunt-protractor-runner": "1.1.4",
+    "grunt-protractor-webdriver": "0.1.9",
+    "karma": "0.12.24",
+    "karma-cli": "0.0.4",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "0.3.8",
+    "karma-ng-html2js-preprocessor": "0.1.2",
+    "karma-phantomjs-launcher": "1.0.2",
+    "karma-spec-reporter": "0.0.26",
+    "load-grunt-tasks": "3.0.0"
   },
-  "author": "Lukas Ruebbelke",
-  "license": "ISC"
+  "author": "aniaw <ania_w@outlook.com>",
+  "license": "ISC",
+  "scripts": {
+    "start": "node_modules/.bin/grunt serve",
+    "test": "grunt verify --force"
+  }
 }

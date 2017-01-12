@@ -4,16 +4,19 @@ This the companion project for the Angular Testing Quick Start from [One Hungry 
 
 To read the guide head on over to [the repo](https://github.com/onehungrymind/angular-testing-quick-start-guide).
 
+To run the app, make sure you have Node installed.
+
+Install dependencies
+--------------------
+```
+npm install
+```
 
 Run the App
 -------------------
-To run the app, make sure you have Node installed.
-
-And install and run the `serve` package so you can build the app.
 
 ```
-npm install -g serve
-serve src/
+npm start
 ```
 
 Navigate to `http://localhost:3000`
@@ -21,13 +24,8 @@ Navigate to `http://localhost:3000`
 Run the Tests
 -------------------
 
-To run the tests, make sure you have Node installed.
-
-Install and run the `karma-cli` package so you can test the app.
-
 ```
-npm install -g karma-cli
+npm test
 ```
 
-Then run `npm install` and `karma start` to run the tests.
 

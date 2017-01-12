@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="myApp">
+<html ng-app="app">
     <head>
         <title>AngularJS Website</title>
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -9,10 +9,10 @@
     <body>
         <!-- top -->
         <header id="header">
-            <h1 id="logo"><a href="#/home"></a></h1>
+            <h1 id="logo"><a href="#/about"></a></h1>
             <div id="menu">
-                <a href="#/home" class="btn btn-default">Home</a>
                 <a href="#/about" class="btn btn-default">About</a>
+                <a href="#/contacts" class="btn btn-default">Contacts</a>
                 <a href="#/experiments" class="btn btn-default">Experiments</a>
             </div>
             <div class="color"></div>
@@ -29,9 +29,13 @@
         <script src="bower_components/angular-route/angular-route.min.js"></script>
 
         <script src="app.js"></script>
-        <script src="common/models/messages-model.js"></script>
-        <script src="about/about.js"></script>
-        <script src="experiments/experiments.js"></script>
-        <script src="home/home.js"></script>
+        <script src="common/services/experiment.service.js"></script>
+        <script src="common/services/contact.service.js"></script>
+        <script src="common/directives/experiment-box.directive.js"></script>
+        <script src="common/models/messagesModel.factory.js"></script>
+
+        <script src="modules/about/about.controller.js"></script>
+        <script src="modules/experiments/experiments.controller.js"></script>
+        <script src="modules/contacts/contacts.controller.js"></script>
     </body>
 </html>

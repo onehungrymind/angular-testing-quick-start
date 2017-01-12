@@ -1,6 +1,6 @@
 (function ()
 {
-    angular.module('myApp.about', ['myApp.models.messages']).controller('AboutCtrl', function (Messages)
+    angular.module('app').controller('AboutCtrl', function (Messages)
     {
         var about = this;
         about.title = 'About Page';

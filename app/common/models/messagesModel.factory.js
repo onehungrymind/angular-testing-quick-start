@@ -1,6 +1,6 @@
 (function ()
 {
-    angular.module('myApp.models.messages', []).factory('Messages', function ()
+    angular.module('app').factory('Messages', function ()
     {
         var message = 'Hello Message';
         var getMessage = function ()
@@ -10,6 +10,7 @@
         var setMessage = function (m)
         {
             message = m;
+            return m;
         };
 
         return {

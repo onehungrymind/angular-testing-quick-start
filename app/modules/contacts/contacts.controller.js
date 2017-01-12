@@ -3,6 +3,13 @@
     angular.module('app').controller('ContactController', function (ContactService)
     {
         var ctrl = this;
+
+        ctrl.newContact = {
+            name: 'John',
+            email: 'john@john.pl',
+            phone: '123456789'
+        };
+
         ctrl.contacts = ContactService.list();
 
         ctrl.saveContact = function ()
@@ -12,15 +19,12 @@
         };
 
 
-        ctrl.delete = function (id)
+        ctrl.deleteContact = function (id)
         {
             ContactService.delete(id);
-            if (ctrl.newContact.id == id) {
-                ctrl.newContact = {};
-            }
         };
 
-        ctrl.edit = function (id)
+        ctrl.editContact= function (id)
         {
             ctrl.newContact = angular.copy(ContactService.get(id));
         }

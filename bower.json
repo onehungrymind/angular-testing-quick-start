@@ -3,9 +3,9 @@
     "description": "Fork from Lukas Ruebbelke'a angularjs-testing-quick-start",
     "private": true,
     "dependencies": {
-        "angular": "1.4.7",
-        "angular-mocks": "1.4.7",
-        "angular-route": "1.4.7",
+        "angular": "1.6.0",
+        "angular-mocks": "1.6.0",
+        "angular-route": "1.6.0",
         "bootstrap": "3.3.0"
     },
     "author": "aniaw <ania_w@outlook.com>"

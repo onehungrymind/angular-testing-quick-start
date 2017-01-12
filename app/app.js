@@ -1,8 +1,13 @@
 (function ()
 {
     angular.module('app', ['ngRoute'])
-            .config(function ($routeProvider)
+            .config(function ($routeProvider, $locationProvider)
             {
+                $locationProvider.html5Mode({
+                    enabled: true,
+                    requireBase: false
+                });
+
                 $routeProvider.when('/about', {
                     templateUrl: 'modules/about/about.tpl.html',
                     controller: 'AboutCtrl as about',
@@ -18,7 +23,7 @@
                     controller: 'ContactController',
                     controllerAs: 'contactCtrl'
                 });
-                $routeProvider.otherwise({ redirectTo: '/about' });
 
+                $routeProvider.otherwise({redirectTo: '/about'});
             });
 })();
